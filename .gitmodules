@@ -1,0 +1,3 @@
+[submodule "react-static-boilerplate"]
+	path = react-static-boilerplate
+	url = https://github.com/kriasoft/react-static-boilerplate.git
