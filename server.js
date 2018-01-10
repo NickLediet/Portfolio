@@ -5,6 +5,8 @@ const express = require("express"),
       bodyParser = require("body-parser"),
       nodemailer = require("nodemailer")
 
+const port = process.env.PORT || 8080
+
 app.use(express.static("build"))
 app.use(bodyParser.urlencoded({
   extended : true
@@ -40,4 +42,4 @@ app.post("/email", (req, res) => {
 
 
 
-app.listen(8000, () => console.log(`Listening on post ${8000}`));
+app.listen(port, () => console.log(`Listening on post ${port}`));
