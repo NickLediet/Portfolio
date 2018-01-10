@@ -1,13 +1,11 @@
 {
   "main.css": "static/css/main.4a505658.css",
   "main.css.map": "static/css/main.4a505658.css.map",
-  "main.js": "static/js/main.504293d9.js",
-  "main.js.map": "static/js/main.504293d9.js.map",
+  "main.js": "static/js/main.75c6dc35.js",
+  "main.js.map": "static/js/main.75c6dc35.js.map",
   "static\\media\\GOTHAM-BOLD.TTF": "static/media/GOTHAM-BOLD.46e967b8.TTF",
   "static\\media\\Gotham-Medium.otf": "static/media/Gotham-Medium.27a90e87.otf",
-  "static\\media\\header_background_desktop.png":
-    "static/media/header_background_desktop.baef213c.png",
-  "static\\media\\header_background_mobile.png":
-    "static/media/header_background_mobile.61761fcf.png",
+  "static\\media\\header-background-mobile.png": "static/media/header-background-mobile.b9554784.png",
+  "static\\media\\header_background_desktop.png": "static/media/header_background_desktop.baef213c.png",
   "static\\media\\logo_white.svg": "static/media/logo_white.efad8986.svg"
 }

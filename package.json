@@ -64,7 +64,7 @@
       "node ./setup --download-schema && relay-compiler --src ./src --schema ./src/schema.graphql",
     "build": "node ./setup && react-scripts build && node ./render",
     "test": "node ./setup && react-scripts test --env=jsdom",
-    "deploy": "node ./setup && react-scripts build && gh-pages -d build",
+    "deploy": "npm run build && git push heroku master",
     "start:dev": "node ./setup && react-scripts start"
   }
 }
