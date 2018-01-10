@@ -9,7 +9,7 @@ import LightBox from "./Lightbox"
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchPhotos: (photos) => {
-      fetch("https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=97c6b42d5eefc6430d81dc7371335004&user_id=131519498%40N07&extras=url_m&format=json&nojsoncallback=1")
+      fetch("https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=97c6b42d5eefc6430d81dc7371335004&user_id=131519498%40N07&extras=url_m,url_l&format=json&nojsoncallback=1")
         .then(data => data.json())
         .then(data => dispatch(getPhotos(data.photos.photo)))
     },

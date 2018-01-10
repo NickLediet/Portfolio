@@ -10,11 +10,11 @@ const LightboxContainer = styled.div`
   left: 50%;
   transform: translate(-50%,-50%);
   z-index: 999;
-  height: auto;
+  max-height: 90vh;
   width: 80vw;
   background: #fff;
   border-radius 10px;
-  over-flow: hidden;
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
@@ -23,7 +23,6 @@ const LightboxContainer = styled.div`
   img {
     width: 100%;
     height: auto;
-    border-radius: 10px 10px 0 0;
   }
 `
 const Backdrop = styled.div`
@@ -42,7 +41,7 @@ const Lightbox = (props) =>
     <div onClick={() => props.close()} style={{display: (props.open ? "block" : "none")}}>
       <Backdrop />
       <LightboxContainer>
-        <img src={props.photo.url_m} />
+        <img src={props.photo.url_l} />
         <Header2>{props.photo.title}</Header2>
       </LightboxContainer>  
     </div>
