@@ -1,5 +1,5 @@
 import {
-  GET_PHOTOS, SHOW_TEN_MORE_POHTOS, TOGGLE_LIGHTBOX
+  GET_PHOTOS, SHOW_TEN_MORE_POHTOS, TOGGLE_LIGHTBOX, SET_CURRENT_PHOTO
 } from "../actions/galleryActions"
 
 const initialState = {
@@ -31,6 +31,14 @@ const galleryReducer = (state = initialState, action) => {
         ...state,
         lightboxOpen : !state.lightboxOpen
       }
+      return state
+    }
+    case SET_CURRENT_PHOTO : {
+      state = {
+        ...state,
+        currentPhoto : action.payload
+      }
+      return state
     }
     default : {
       return state;

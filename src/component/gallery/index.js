@@ -1,7 +1,7 @@
 
 import React from "react"
 import { connect } from 'react-redux';
-import { getPhotos, showTenMorePhotos } from "../../actions/galleryActions"
+import { getPhotos, showTenMorePhotos, toggleLightbox, setCurrentPhoto } from "../../actions/galleryActions"
 import {  BodyType, Header2 } from "../../styles/Typeography"
 import { SectionContainer, Button } from '../../styles/SiteTools';
 import Brand from "../../styles/Brand"
@@ -13,7 +13,9 @@ const mapDispatchToProps = (dispatch) => {
         .then(data => data.json())
         .then(data => dispatch(getPhotos(data.photos.photo)))
     },
-    showMorePhotos: () => dispatch(showTenMorePhotos())
+    showMorePhotos: () => dispatch(showTenMorePhotos()),
+    toggleLightbox: () => dispatch(toggleLightbox()),
+    setCurrentPhoto: (index) => dispatch(setCurrentPhoto(index)) 
   }
 }
 const GalleryContainer = SectionContainer.extend`
@@ -79,11 +81,16 @@ const GalleryContainer = SectionContainer.extend`
 class Gallery extends React.Component {
 
   componentDidMount(){
-    console.log("sdfsd;flk");
     this.props.fetchPhotos()
   }
 
+  handleLightbox(index) {
+    this.props.setCurrentPhoto(index)
+    this.props.toggleLightbox()
+  }
+
   render() {  
+
     return (
       <GalleryContainer>  
           <Header2 upper>Photography</Header2>
@@ -93,7 +100,15 @@ class Gallery extends React.Component {
             this.props.photos
               .filter((el, i) => i <= this.props.numShowing )
               .map((el, i) => (
-                <img className="gallery-item" src={el.url_m} key={i}/>))
+                <img 
+                  onClick={() => this.handleLightbox(i)}
+                  className="gallery-item" src={el.url_m} key={i}/>))
+          }
+          {
+            this.props.photos[this.props.currentPhoto] ? 
+              (<LightBox open={!this.props.lightboxOpen}
+                  close={() => this.props.toggleLightbox()}
+                  photo={this.props.photos[this.props.currentPhoto]}/>)  : null
           }
         </div>
         <Button onClick={() => this.props.showMorePhotos()}>See More!</Button>
