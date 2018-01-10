@@ -4,7 +4,7 @@ import Brand from "../styles/Brand"
 export const SectionContainer = styled.section`
   box-sizing: border-box;
   padding: ${Brand.spacing.margin};
-  width: 100%;
+  width: 100vw;
   h2 {
     margin: 0 auto;
     color: ${props => props.headColor ? props.headColor : Brand.colors.red};

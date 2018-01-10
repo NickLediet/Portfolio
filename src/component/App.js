@@ -10,11 +10,12 @@ import Skills from "./Skills"
 // import {
 //   BodyType, Header1, Header2, Header3, Header4
 // } from "../styles/Typeography"
-
+// <Header />
+ 
 const App = () => 
   (
-    <div className="app">
-      <Header />
+    <div>
+      <Header />   
       <About />
       <Skills />
     </div>
