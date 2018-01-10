@@ -51,7 +51,7 @@
     "*.json": ["prettier --write", "git add"]
   },
   "engines": {
-    "node": "8.4.0"
+    "node": "6.9.0"
   },
   "scripts": {
     "run": "npm run build && node server.js",
