@@ -10,7 +10,7 @@ import {
 import MobileBackgroundImg from '../images/header-background-mobile.png';
 import DesktopBackgroundImg from "../images/header_background_desktop.png"
 import LogoWhite from "../images/logo_white.svg"
-
+import { Button } from "../styles/SiteTools"
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -79,30 +79,7 @@ export const SubTagline = Header2.extend`
     text-align: center;
   }
 `
-export const Button = styled.button`
-  border: none;
-  background: ${Brand.colors.red};
-  font: 12px ${Brand.fonts.GothamBold};
-  text-transform: uppercase;
-  color: #ffffff;
-  padding: 20px;
-  width:150px;
-  cursor: pointer;
-  ${'' /* FROM CODEPEN :  https://codepen.io/sdthornton/pen/wBZdXq*/}
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  ${'' /* really a one time thing */}
-  margin: ${props => props.center ? "0 auto;" : ""}
-  &:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  }
-  @media(min-width: ${Brand.sizes.tablet}) {
-    font-size: 1em;
-    width: 200px;
-    padding: 5px;
-  }
 
-`
 
 const Header = (props) => (
   <HeaderContainer>

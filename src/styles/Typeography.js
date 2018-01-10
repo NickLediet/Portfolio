@@ -12,6 +12,7 @@ export const BodyType = styled.p`
   font-size : 1em;
   line-height : 2em;
   color : ${props => props.dark ?  Brand.colors.darkType : Brand.colors.grey };
+  padding-bottom: 50px;
   @media (min-width : ${Brand.sizes.tablet}) {
     font-size: 1.5em;
     line-height : 2em;

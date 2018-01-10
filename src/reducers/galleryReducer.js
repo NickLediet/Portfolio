@@ -1,12 +1,13 @@
 import {
-  GET_PHOTOS, SHOW_TEN_MORE_POHTOS
+  GET_PHOTOS, SHOW_TEN_MORE_POHTOS, TOGGLE_LIGHTBOX
 } from "../actions/galleryActions"
 
 const initialState = {
   numShowing : 10,
   photos: [],
   currentPhoto: 0,
-  error: ""
+  error: "",
+  lightboxOpen : true
 }
 
 const galleryReducer = (state = initialState, action) => {
@@ -24,6 +25,12 @@ const galleryReducer = (state = initialState, action) => {
         numShowing: state.numShowing + 10
       }
       return state
+    }
+    case TOGGLE_LIGHTBOX : {
+      state = {
+        ...state,
+        lightboxOpen : !state.lightboxOpen
+      }
     }
     default : {
       return state;
