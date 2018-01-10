@@ -3,6 +3,7 @@ import React from 'react';
 import Header from "./Header"
 import About from "./About"
 import Skills from "./Skills"
+import Gallery from "./gallery/index"
 // import Grid from "material-ui/Grid"
 // import { MuiThemeProvider } from 'material-ui/styles';
 // import Theme from "../styles/Theme";
@@ -18,6 +19,7 @@ const App = () =>
       <Header />   
       <About />
       <Skills />
+      <Gallery />
     </div>
   );
 
