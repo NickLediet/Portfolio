@@ -16,6 +16,8 @@ app.use(bodyParser.json())
 app.get("/", (req, res) => res.sendFile("index.html"))
 
 app.post("/email", (req, res) => {
+
+  console.log(req.body)
   const { email, name, message } = req.body
 
   console.log(name)
@@ -33,8 +35,7 @@ app.post("/email", (req, res) => {
     to : "nicklediet@gmail.com",
     from : email,
     subject: `New Email from ${name}`,
-    text: message,
-    textHtml 
+    text: message
   }
   smtpTransport.sendMail(emailMessage)
   res.send({msg : "email sent!"})
@@ -42,4 +43,4 @@ app.post("/email", (req, res) => {
 
 
 
-app.listen(process.env.PORT, () => console.log(`Listening on post ${port}`));
+app.listen(process.env.PORT || 8080, () => console.log(`Listening on post ${port}`));
