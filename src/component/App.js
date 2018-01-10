@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from "./Header"
 import About from "./About"
+import Skills from "./Skills"
 // import Grid from "material-ui/Grid"
 // import { MuiThemeProvider } from 'material-ui/styles';
 // import Theme from "../styles/Theme";
@@ -15,6 +16,7 @@ const App = () =>
     <div className="app">
       <Header />
       <About />
+      <Skills />
     </div>
   );
 

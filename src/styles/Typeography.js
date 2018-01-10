@@ -9,7 +9,7 @@ import Brand from "./Brand"
 
 export const BodyType = styled.p`
   font-family : ${Brand.fonts.GothamMed};
-  font-size : 0.875em;
+  font-size : 1em;
   line-height : 2em;
   color : ${props => props.dark ?  Brand.colors.darkType : Brand.colors.grey };
   @media (min-width : ${Brand.sizes.tablet}) {

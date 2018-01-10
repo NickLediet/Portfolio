@@ -1,10 +1,7 @@
 import React from "react"
-import styled from "styled-components"
-
 // Local Dependcies 
 import {  BodyType, Header2 } from "../styles/Typeography"
 import { SectionContainer}  from "../styles/SiteTools"
-import Brand from "../styles/Brand"
 
 const About = () => 
   (
