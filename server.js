@@ -7,13 +7,17 @@ const express = require("express"),
 
 const port = process.env.PORT || 8080
 
-console.log(propcess.CLEARDB_DATABASE_URL)
+
 
 app.use(express.static(path.join(__dirname, "build")))
 app.use(bodyParser.urlencoded({
   extended : true
 }))
 app.use(bodyParser.json())
+
+app.get("/test", (req, res) => res.json({
+  link : process.env.CLEARDB_DATABASE_URL
+}))
 
 app.get("/", (req, res) => res.sendFile("index.html"))
 
