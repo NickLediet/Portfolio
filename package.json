@@ -50,7 +50,9 @@
     "*.js": ["eslint --no-ignore --fix", "git add"],
     "*.json": ["prettier --write", "git add"]
   },
-  "engines": { "node": "8.4.0" },
+  "engines": {
+    "node": "8.4.0"
+  },
   "scripts": {
     "precommit": "lint-staged",
     "lint":
