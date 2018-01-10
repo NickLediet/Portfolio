@@ -7,13 +7,13 @@ const express = require("express"),
 
 const port = process.env.PORT || 8080
 
-app.use(express.static("build"))
+app.use(express.static(path.join(__dirname, "build")))
 app.use(bodyParser.urlencoded({
   extended : true
 }))
 app.use(bodyParser.json())
 
-app.get("/", (req, res) => res.sendFile("build/index.html"))
+app.get("/", (req, res) => res.sendFile("index.html"))
 
 app.post("/email", (req, res) => {
   const { email, name, message } = req.body
