@@ -22,6 +22,6 @@ export default {
     shadow : "3px 6px rgba(0, 0, 0, .10)"
   },
   spacing: {
-    margin : "38px"
+    margin : "50px 35px"
   }
 }

@@ -7,9 +7,31 @@ import Brand from "../styles/Brand"
 
 const SkillsContainer = SectionContainer.extend`
   background: ${Brand.colors.redGradient};
+  div {
+    width: 100%;
+    @media( min-width: ${Brand.sizes.tablet}) {
+      height: 100% !important;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  span {
+    font-size: 4em;
+    color: #fff;
+    &:nth-child(2) {
+      margin: 20px;
+    }
+  }
 `
 
 const Card = styled.div`
+  display: flex;
+  flex-direction: column !important;
+  align-items: center;
   box-shadow : rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   padding: 10px 20px;
@@ -27,26 +49,44 @@ const Card = styled.div`
     font-family: ${Brand.fonts.GothamBold};
     font-size: 1.5em;
     text-align: center;
-    line-height: 2em;
-    color: ${Brand.colors.red};
     text-decoration: underline;
+    background: ${Brand.colors.greenGradient};
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
-  div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+
+  i {
+    font-size: 5em;
+    padding: 10px;
+    background: ${Brand.colors.greenGradient};
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
+
   ul {
     list-style: none;
-    width: 40%;
+    width: ;
     padding: 0;
     li {
       padding: 5px 0;
       margin: 0;
-      font-size: 1em;
+      font-size: 1.25em;
       font-family: ${Brand.fonts.GothamMed};
       color: ${Brand.colors.grey};
+      text-align: center;
     }  
+  }
+
+
+  @media( min-width: ${Brand.sizes.tablet}) {
+    width: 25%;
+    margin: 20px;
+    ul li {
+      font-size: 1.75em ;
+    }
+  }
+  @media(min-width: ${Brand.sizes.desktop}) {
+    width: 15%;
   }
 `
 
@@ -59,45 +99,49 @@ const Skills = () =>
         <BodyType>
           I have various development, design and non-technical skills that I can bring. I excel at learning new things. If you want to work someone who will take an interest in what your trying to represent digitally I can help. I am comfortable approaching new platforms, however I am most comfortable in the adobe suite and working with various Javascript frameworks or PHP/Laravel.
         </BodyType>
-        <Card>
-          <h3>DEVELOPMENT</h3>
-          <div>
+        <div>
+          <Card>
+            <h3>DEVELOPMENT</h3>
+            <i className="fa fa-laptop" />
             <ul>
               <li>HTML5, CSS3</li>
               <li>Javascript/ES6</li>
               <li>React/Redux</li>
               <li>Vue/Vuex</li>
-            </ul>
-            <ul>
+
               <li>Node/Express</li>
               <li>PHP7/Laravel</li>
               <li>MySQL</li>
               <li>Git</li>
             </ul>
-          </div>
-        </Card>
-        <Card float="left">
-          <h3>DEVELOPMENT</h3>
-          <div>
+          </Card>
+          <Card float="left">
+            <h3>DESIGN</h3>
+            <i className="fa fa-pencil" />
             <ul>
               <li>Photoshop</li>
               <li>Illustrator</li>
               <li>Adobe XD</li>
               <li>Lightroom</li>
             </ul>
-          </div>
-        </Card>
-        <Card float="right">
-          <h3>DEVELOPMENT</h3>
-          <div>
+          </Card>
+          <Card float="right">
+            <h3>SOFT SKILLS</h3>
+            <i className="fa fa-users" />
             <ul>
               <li>Photoshop</li>
               <li>Illustrator</li>
               <li>Adobe XD</li>
               <li>Lightroom</li>
             </ul>
-          </div>
-        </Card>
+          </Card>
+        </div>
+        <span>
+          <i className="fa fa-eye" />
+          &nbsp;
+          <i className="fa fa-heart" /> 
+          {`  JS`}
+        </span>
       </SkillsContainer>
   )
 
