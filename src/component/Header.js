@@ -33,12 +33,13 @@ const HeaderContainer = styled.header`
     min-height: 690px; 
   } */}
   nav {
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    
+    align-items: center;
+    justify-content: space-around;
     img {
       width: 60px;
-      padding: 10px;
       @media (min-width: ${Brand.sizes.tablet}) {
         width: 100px;
       }
