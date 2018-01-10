@@ -54,6 +54,7 @@
     "node": "8.4.0"
   },
   "scripts": {
+    "run": "npm run build && node server.js",
     "precommit": "lint-staged",
     "lint":
       "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" . && stylelint \"./src/**/*.js\"",
