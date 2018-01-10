@@ -5,7 +5,7 @@ export default {
     grey : "#4A4A4A",
     red : "#E53333",
     darkType : "#ffffff",
-    redGradient : "linear-gradient(73%, #CC4242, #CF4141, #FF3131)"
+    redGradient : "linear-gradient(73deg, #CC4242, #CF4141, #FF3131)"
   },
   fonts: {
     GothamMed : "Gotham Medium",
