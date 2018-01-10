@@ -42,4 +42,4 @@ app.post("/email", (req, res) => {
 
 
 
-app.listen(port, () => console.log(`Listening on post ${port}`));
+app.listen(process.env.PORT, () => console.log(`Listening on post ${port}`));
