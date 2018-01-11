@@ -33,8 +33,8 @@ const Card = styled.div`
   flex-direction: column !important;
   align-items: center;
   box-shadow : rgba(0, 0, 0, 0.2);
+  width: 100%;
   border-radius: 20px;
-  padding: 10px 20px;
   margin-bottom: 25px;
   background: #fff;
   height: auto;

@@ -17,6 +17,12 @@ const ContactContainer = SectionContainer.extend`
   h3 {
     color: #fff;
   }
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 `
 
 const FormContainer = styled.form`
@@ -25,8 +31,8 @@ const FormContainer = styled.form`
   grid-row-gap: 1em;
   grid-column-gap: 1em;
   justify-content: space-between;
-  width: 100%;
   height: 350px;
+
   *  {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
@@ -64,6 +70,12 @@ const FormContainer = styled.form`
 `
 
 class Contact extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      sentEmail : false
+    }
+  }
   sendForm() {
     const data = {
       name : this.fullname.value,
@@ -73,7 +85,7 @@ class Contact extends React.Component {
 
     console.log(data)
 
-    fetch(`/email`, {
+    fetch(`email`, {
       method : "POST",
       headers: {
         'Accept': 'application/json, text/plain, */*',
@@ -82,27 +94,39 @@ class Contact extends React.Component {
       body : JSON.stringify(data)
     })
     .then(data => data.json())
-    .then(data => console.log(data))
+    .then(data => {
+      this.setState({
+        sentEmail : true 
+      })
+    })
   }
   render() {
     return   (
       <ContactContainer>
-        <Header2 upper dark>CONTACT</Header2>
-        <Header3>Ready to try me out?</Header3>
-        <FormContainer>
-          <input type="text" id="full-name" 
-            ref={input => this.fullname = input}
-            placeholder="Full Name"/>
-          <input type="email" id="email" 
-            ref={input => this.email = input}
-            placeholder="Email"/>
-          <textarea id="message" 
-            ref={input => this.message = input}
-            placeholder="Message" />
-        </FormContainer>
-        <Button 
-          onClick={() => this.sendForm()}
-          color={Brand.colors.greenGradient}>send</Button>
+        {
+
+          this.state.emailSent ?
+            (<Header2>Thanks a ton for reach out. I'll reach out to your shortly!</Header2>) :
+            (<div>
+              <Header2 upper dark>CONTACT</Header2>
+              <Header3>Ready to try me out?</Header3>
+              <FormContainer>
+                <input type="text" id="full-name" 
+                  ref={input => this.fullname = input}
+                  placeholder="Full Name"/>
+                <input type="email" id="email" 
+                  ref={input => this.email = input}
+                  placeholder="Email"/>
+                <textarea id="message" 
+                  ref={input => this.message = input}
+                  placeholder="Message" />
+              </FormContainer>
+              <Button 
+                onClick={() => this.sendForm()}
+                color={Brand.colors.greenGradient}>send</Button>
+            </div>)
+        }
+        
       </ContactContainer>
     )
   }

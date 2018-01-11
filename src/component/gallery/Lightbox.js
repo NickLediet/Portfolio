@@ -27,7 +27,7 @@ const LightboxContainer = styled.div`
 `
 const Backdrop = styled.div`
   background-color: #000;
-  opacity: 0.8;
+  opacity: 0.9;
   filter: blur(250px);
   position: fixed;
   top: 50%;
