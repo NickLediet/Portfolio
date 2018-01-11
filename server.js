@@ -51,7 +51,8 @@ app.get("/projects", (req, res) => {
       title: el.title,
       tags: [...new Set(el.tags.split(","))],
       link : el.link,
-      thumbnail_url: el.thumbnail_url
+      thumbnail_url: el.thumbnail_url,
+      description : el.description
     }))
     projects.forEach(el => {
       tags = tags.concat(el.tags)
