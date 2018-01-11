@@ -17,10 +17,6 @@ const port = process.env.PORT || 8080
 
 const connection =  mysql.createConnection("mysql://b654198d5dbfc8:7585cf2b@us-cdbr-iron-east-05.cleardb.net/heroku_73724b049f62465?reconnect=true")
 
-connection.connect((err) => {
-  if (err) throw err
-  console.log("Connected!")
-})
 
 const getProjects = `
 select *
@@ -34,7 +30,6 @@ select *
     on p.id = a.projects_id
 `
 
-app.use(cors())
 app.use(express.static(path.join(__dirname, "build")))
 app.use(bodyParser.urlencoded({
   extended : true
@@ -42,6 +37,10 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 
 app.get("/projects", (req, res) => {
+  connection.connect((err) => {
+    if (err) throw err
+    console.log("Connected!")
+  })
   connection.query(getProjects, (err, result) => {
     if (err) throw err
     console.log("Result: " + result)

@@ -67,7 +67,7 @@ const Tag = styled.span`
 
 const mapDispatchToProps = (dispatch) => ({
   setAllProjectsAndTags : () => {
-    fetch("http://localhost:8080/projects")
+    fetch("/projects")
       .then(data => data.json())
       .then(data => {
         console.log(data)
